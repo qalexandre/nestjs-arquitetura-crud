@@ -24,11 +24,11 @@ export class UsersService {
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.users;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.users.find((user) => user.id === id);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
