@@ -14,7 +14,8 @@ export class UsersService {
   ];
 
   create(createUserDto: CreateUserDto) {
-    const id = this.users[this.users.length - 1].id + 1;
+    let currentMaxId = this.users[this.users.length - 1]?.id || 0;
+    const id = currentMaxId + 1;
 
     const user: User = { id, ...createUserDto };
 
